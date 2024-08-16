@@ -15,7 +15,7 @@ services:
     networks:
       - mynetwork
     command: >
-      sh -c "go test -v ./... && exec ./main"  # Run tests and then start the server
+      sh -c "go test -v ./... && exec ./main"
   
   mongodb:
     container_name: mongo_container1
