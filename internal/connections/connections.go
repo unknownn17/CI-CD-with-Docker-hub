@@ -15,7 +15,7 @@ import (
 )
 
 func NewDatabase() interface17.TaskService {
-	opt, err := mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb://localhost:27018"))
+	opt, err := mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb://mongodb:27017"))
 	if err != nil {
 		log.Fatal(err)
 	}
