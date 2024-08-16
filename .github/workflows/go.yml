@@ -28,6 +28,11 @@ jobs:
 
     - name: Set up Docker Compose
       run: |
+        sudo apt-get update
+        sudo apt-get install -y docker-compose
+
+    - name: Start Docker Compose
+      run: |
         docker-compose -f docker-compose.yml up -d
         # Wait for MongoDB to be ready
         docker-compose -f docker-compose.yml exec -T mongodb mongo --eval "db.runCommand({ ping: 1 })"
