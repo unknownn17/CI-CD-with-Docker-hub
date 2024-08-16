@@ -10,7 +10,7 @@ on:
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  DOCKER_IMAGE_NAME: task_API
+  DOCKER_IMAGE_NAME: task_api
   DOCKER_IMAGE_TAG: latest
 
 jobs:
