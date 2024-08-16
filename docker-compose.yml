@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  go:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: myapp177
+    image: myapp177
+    ports:
+      - "9001:8080"
+    depends_on:
+      - mongodb
+    networks:
+      - mynetwork  
+  
+  mongodb:
+    container_name: mongo_container
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    networks:
+      - mynetwork
+networks:
+  mynetwork:
+    driver: bridge
+
+volumes:
+  db-data1:
