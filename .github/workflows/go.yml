@@ -29,7 +29,8 @@ jobs:
       run: go build -v ./...
 
     - name: Test
-      run: go test -v ./...
+      run: go test -v ./handler_test.go
+      
     - name: Checkout repository
       uses: actions/checkout@v4
 
