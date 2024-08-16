@@ -1,3 +1,4 @@
+# docker-compose.yml
 version: '3.8'
 
 services:
@@ -5,25 +6,25 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: myapp177
-    image: myapp177
+    container_name: myapp017
+    image: myapp017
     ports:
       - "9001:8080"
     depends_on:
       - mongodb
     networks:
-      - mynetwork  
+      - mynetwork
+    command: >
+      sh -c "go test -v ./... && exec ./main"  # Run tests and then start the server
   
   mongodb:
-    container_name: mongo_container
+    container_name: mongo_container1
     image: mongo:latest
     ports:
       - "27018:27017"
     networks:
       - mynetwork
+
 networks:
   mynetwork:
     driver: bridge
-
-volumes:
-  db-data1:
