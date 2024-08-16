@@ -4,10 +4,10 @@ name: Build, Push and Deploy Docker Image
 on:
   push:
     branches:
-      - unknown7 
+      - unknown17
   pull_request:
     branches:
-      - unknown17
+      - unknown17 
 
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
